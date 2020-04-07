@@ -13,17 +13,17 @@ public class Reduce {
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        return this.arrayList.stream().mapToInt(element -> element).average().getAsDouble();
     }
 
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        return this.arrayList.indexOf(this.arrayList.stream().filter(element -> element % 2 == 0).findFirst().orElse(null));
     }
 
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return this.arrayList.stream().reduce((lastOddNumber, element) -> lastOddNumber = (element % 2 == 1)? element : lastOddNumber).get();
     }
 
 
